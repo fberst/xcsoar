@@ -169,6 +169,8 @@ namespace InfoBoxFactory
 
     EXHAUST_TEMPERATURE,
 
+    WT_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 
