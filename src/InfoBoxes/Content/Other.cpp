@@ -229,3 +229,18 @@ UpdateInfoBoxCHT4(InfoBoxData &data)
 
   data.SetValueUnit(Units::current.temperature_unit);
 }
+
+void
+UpdateInfoBoxOilTemperature(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.oil_temp_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%2.1f"),
+                    Units::ToUserTemperature(basic.oil_temp));
+
+  data.SetValueUnit(Units::current.temperature_unit);
+}

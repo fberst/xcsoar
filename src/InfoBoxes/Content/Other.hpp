@@ -56,6 +56,9 @@ UpdateInfoBoxCHT3(InfoBoxData &data);
 void
 UpdateInfoBoxCHT4(InfoBoxData &data);
 
+void
+UpdateInfoBoxOilTemperature(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

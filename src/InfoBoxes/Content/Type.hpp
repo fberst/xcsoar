@@ -165,6 +165,8 @@ namespace InfoBoxFactory
 
     CYLINDERHEAD4_TEMPERATURE,
 
+    OIL_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 
