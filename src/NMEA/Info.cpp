@@ -166,6 +166,13 @@ NMEAInfo::ProvideCHT4(fixed value)
 }
 
 void
+NMEAInfo::ProvideOilTemperature(fixed value)
+{
+  oil_temp = value;
+  oil_temp_available.Update(clock);
+}
+
+void
 NMEAInfo::Reset()
 {
   UpdateClock();
@@ -238,6 +245,7 @@ NMEAInfo::Reset()
   cht2_available.Clear();
   cht3_available.Clear();
   cht4_available.Clear();
+  oil_temp_available.Clear();
 }
 
 void
@@ -296,6 +304,7 @@ NMEAInfo::Expire()
   cht2_available.Expire(clock,10);
   cht3_available.Expire(clock,10);
   cht4_available.Expire(clock,10);
+  oil_temp_available.Expire(clock,10);
 }
 
 void
@@ -418,4 +427,6 @@ NMEAInfo::Complement(const NMEAInfo &add)
     cht3 = add.cht3;
   if (cht4_available.Complement(add.cht4_available))
     cht4 = add.cht4;
+  if (oil_temp_available.Complement(add.oil_temp_available))
+    oil_temp = add.oil_temp;
 }
