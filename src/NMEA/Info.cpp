@@ -200,6 +200,13 @@ NMEAInfo::ProvideEngineSpeed(fixed value)
   enginespeed_available.Update(clock);
 }
 
+void 
+NMEAInfo::ProvideFullGauge(fixed value)
+{
+  fullgauge = value;
+  fullgauge_available.Update(clock);
+}
+
 void
 NMEAInfo::Reset()
 {
@@ -278,6 +285,7 @@ NMEAInfo::Reset()
   water_temp_available.Clear();
   oilpressure_available.Clear();
   enginespeed_available.Clear();
+  fullgauge_available.Clear();
 }
 
 void
@@ -341,6 +349,7 @@ NMEAInfo::Expire()
   water_temp_available.Expire(clock,10);
   oilpressure_available.Expire(clock,10);
   enginespeed_available.Expire(clock,10);
+  fullgauge_available.Expire(clock,10);
 }
 
 void
@@ -473,4 +482,6 @@ NMEAInfo::Complement(const NMEAInfo &add)
     oilpressure = add.oilpressure;
   if (enginespeed_available.Complement(add.enginespeed_available))
     enginespeed = add.enginespeed;
+  if (fullgauge_available.Complement(add.fullgauge_available))
+    fullgauge = add.fullgauge;
 }

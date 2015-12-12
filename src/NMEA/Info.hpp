@@ -419,6 +419,16 @@ struct NMEAInfo {
    */
   Validity enginespeed_available;
 
+  /**
+   * Remaining Full in percent (if available)
+   */
+  fixed fullgauge;
+
+  /**
+   * Is  information about remaining full available?
+   */
+  Validity fullgauge_available;
+
   //###########
   //   Other
   //###########
@@ -703,6 +713,8 @@ struct NMEAInfo {
   void ProvideOilPressure(fixed value);
 
   void ProvideEngineSpeed(fixed value);
+
+  void ProvideFullGauge(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
