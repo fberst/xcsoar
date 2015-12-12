@@ -167,6 +167,8 @@ namespace InfoBoxFactory
 
     OIL_TEMPERATURE,
 
+    EXHAUST_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 
