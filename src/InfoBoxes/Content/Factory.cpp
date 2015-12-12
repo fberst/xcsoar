@@ -1049,6 +1049,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows the temperature of cylinderhead 2"),
     UpdateInfoBoxCHT2,
   },
+
+  // CYLINDERHEAD3_TEMPERATURE
+  {
+    N_("Cylinderhead3 temperature"),
+    N_("CHT3"),
+    N_("Shows the temperature of cylinderhead 3"),
+    UpdateInfoBoxCHT3,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
