@@ -469,6 +469,16 @@ struct NMEAInfo {
    */
   Validity switch1_available;
 
+  /**
+   * State of Switch2 (if available)
+   */
+  bool switch2;
+
+  /**
+   * Is State of Switch2 available?
+   */
+  Validity switch2_available;
+
   //###########
   //   Other
   //###########
@@ -763,6 +773,8 @@ struct NMEAInfo {
   void ProvideVoltage2(fixed value);
 
   void ProvideSwitch1(bool value);
+
+  void ProvideSwitch2(bool value);
 
   /**
    * Clears all information, start with tabula rasa.
