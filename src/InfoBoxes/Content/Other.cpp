@@ -286,3 +286,16 @@ UpdateInfoBoxRpm(InfoBoxData &data)
 
   data.SetValue(_T("%2.0f"), basic.enginespeed);
 }
+
+void
+UpdateInfoBoxOilPressure(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.oilpressure_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%2.1f"), basic.oilpressure);
+}
+

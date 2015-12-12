@@ -68,6 +68,9 @@ UpdateInfoBoxWaterTemperature(InfoBoxData &data);
 void
 UpdateInfoBoxRpm(InfoBoxData &data);
 
+void
+UpdateInfoBoxOilPressure(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

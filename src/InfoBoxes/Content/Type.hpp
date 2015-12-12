@@ -173,6 +173,8 @@ namespace InfoBoxFactory
 
     ROUNDS_PER_MINUTE,
 
+    OIL_PRESSURE,
+
     e_NUM_TYPES /* Last item */
   };
 

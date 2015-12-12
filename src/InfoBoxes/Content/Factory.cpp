@@ -1097,6 +1097,14 @@ static constexpr MetaData meta_data[] = {
     N_("Engine speed in rounds per minute"),
     UpdateInfoBoxRpm,
   },
+
+  // OIL_PRESSURE
+  {
+    N_("Oil pressure"),
+    N_("Oil-press"),
+    N_("Shows the oil pressure"),
+    UpdateInfoBoxOilPressure,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
