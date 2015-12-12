@@ -379,6 +379,16 @@ struct NMEAInfo {
    */
   Validity oil_temp_available;
 
+  /**
+   * Temperature of Exhaust (if available)
+   */
+  fixed exhaust_temp;
+
+  /**
+   * Is temperature of Exhaust available?
+   */
+  Validity exhaust_temp_available;
+
   //###########
   //   Other
   //###########
@@ -655,6 +665,8 @@ struct NMEAInfo {
   void ProvideCHT4(fixed value);
 
   void ProvideOilTemperature(fixed value);
+
+  void ProvideExhaustTemperature(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
