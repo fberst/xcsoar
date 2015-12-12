@@ -499,6 +499,17 @@ struct NMEAInfo {
    */
   Validity switch4_available;
 
+  /**
+   * Operating Hours Counter (if available)
+   */
+  fixed operatinghours;
+  fixed operatingminutes;
+  
+  /**
+   * Is Operating Hours Counter available?
+   */
+  Validity operatinghours_available;
+
   //###########
   //   Other
   //###########
@@ -799,6 +810,8 @@ struct NMEAInfo {
   void ProvideSwitch3(bool value);
 
   void ProvideSwitch4(bool value);
+
+  void ProvideOperatinghours(fixed hours, fixed minutes);
 
   /**
    * Clears all information, start with tabula rasa.

@@ -257,6 +257,14 @@ NMEAInfo::ProvideSwitch4(bool value)
 }
 
 void
+NMEAInfo::ProvideOperatinghours(fixed hours, fixed minutes)
+{
+  operatinghours=hours;
+  operatingminutes=minutes;
+  operatinghours_available.Update(clock);
+}
+
+void
 NMEAInfo::Reset()
 {
   UpdateClock();
@@ -342,6 +350,7 @@ NMEAInfo::Reset()
   switch2_available.Clear();
   switch3_available.Clear();
   switch4_available.Clear();
+  operatinghours_available.Clear();
 }
 
 void
@@ -413,6 +422,7 @@ NMEAInfo::Expire()
   switch2_available.Expire(clock,10);
   switch3_available.Expire(clock,10);
   switch4_available.Expire(clock,10);
+  operatinghours_available.Expire(clock,10);
 }
 
 void
@@ -561,4 +571,8 @@ NMEAInfo::Complement(const NMEAInfo &add)
     switch3 = add.switch3; 
   if (switch4_available.Complement(add.switch4_available))
     switch4 = add.switch4;
+  if (operatinghours_available.Complement(add.operatinghours_available)){
+    operatinghours = add.operatinghours;
+    operatingminutes = add.operatingminutes;
+  }
 }
