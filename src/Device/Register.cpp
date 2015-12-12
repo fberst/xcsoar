@@ -57,6 +57,7 @@ Copyright_License {
 #include "Device/Driver/ATR833.hpp"
 #include "Device/Driver/XCTracer.hpp"
 #include "Device/Driver/KRT2.hpp"
+#include "Device/Driver/EngineMonitor.hpp"
 #include "Util/Macros.hpp"
 #include "Util/StringAPI.hxx"
 
@@ -100,6 +101,7 @@ static const struct DeviceRegister *const driver_list[] = {
   &krt2_driver,
   &atr833_driver,
   &xctracer_driver,
+  &engine_monitor_driver,
   nullptr
 };
 
