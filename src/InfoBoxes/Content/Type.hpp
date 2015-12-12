@@ -159,6 +159,8 @@ namespace InfoBoxFactory
 
     CYLINDERHEAD1_TEMPERATURE,
 
+    CYLINDERHEAD2_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 
