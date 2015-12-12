@@ -179,6 +179,8 @@ namespace InfoBoxFactory
 
     FULL_FLOW,
 
+    VOLTAGE1,
+
     e_NUM_TYPES /* Last item */
   };
 

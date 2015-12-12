@@ -1121,6 +1121,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows the fullflow in l/h"),
     UpdateInfoBoxFullflow,
   },
+
+  // Voltage1
+  {
+    N_("Voltage1"),
+    N_("Voltage1"),
+    N_("Shows Voltage1"),
+    UpdateInfoBoxVoltage1,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

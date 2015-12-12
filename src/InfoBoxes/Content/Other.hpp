@@ -77,6 +77,9 @@ UpdateInfoBoxFullgauge(InfoBoxData &data);
 void
 UpdateInfoBoxFullflow(InfoBoxData &data);
 
+void
+UpdateInfoBoxVoltage1(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

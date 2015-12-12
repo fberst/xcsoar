@@ -322,3 +322,15 @@ UpdateInfoBoxFullflow(InfoBoxData &data)
 
   data.SetValue(_T("%2.1f"), basic.fullflow);
 }
+
+void
+UpdateInfoBoxVoltage1(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.voltage1_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  data.SetValue(_T("%2.1f"), basic.voltage1);
+}
