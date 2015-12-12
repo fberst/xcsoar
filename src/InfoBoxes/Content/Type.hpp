@@ -177,6 +177,8 @@ namespace InfoBoxFactory
 
     FULL_GAUGE,
 
+    FULL_FLOW,
+
     e_NUM_TYPES /* Last item */
   };
 

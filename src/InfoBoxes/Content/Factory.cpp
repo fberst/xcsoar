@@ -1113,6 +1113,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows the fullgauge in percent"),
     UpdateInfoBoxFullgauge,
   },
+
+  // FULL_FLOW
+  {
+    N_("Full flow"),
+    N_("Full-flow"),
+    N_("Shows the fullflow in l/h"),
+    UpdateInfoBoxFullflow,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

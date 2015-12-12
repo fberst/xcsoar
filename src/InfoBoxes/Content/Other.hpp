@@ -74,6 +74,9 @@ UpdateInfoBoxOilPressure(InfoBoxData &data);
 void
 UpdateInfoBoxFullgauge(InfoBoxData &data);
 
+void
+UpdateInfoBoxFullflow(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

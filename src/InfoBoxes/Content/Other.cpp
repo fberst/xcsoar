@@ -310,3 +310,15 @@ UpdateInfoBoxFullgauge(InfoBoxData &data)
 
   data.SetValue(_T("%2.0f%%"), basic.fullgauge);
 }
+
+void
+UpdateInfoBoxFullflow(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.fullflow_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  data.SetValue(_T("%2.1f"), basic.fullflow);
+}
