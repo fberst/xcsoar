@@ -1033,6 +1033,14 @@ static constexpr MetaData meta_data[] = {
        "or the target within the AAT sector for AAT tasks."),
     IBFHelper<InfoBoxContentNextArrow>::Create,
   },
+
+  // CYLINDERHEAD1_TEMPERATURE
+  {
+    N_("Cylinderhead1 temperature"),
+    N_("CHT1"),
+    N_("Shows the temperature of cylinderhead 1"),
+    UpdateInfoBoxCHT1,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

@@ -157,6 +157,8 @@ namespace InfoBoxFactory
     /* 110..119 */
     NEXT_ARROW,
 
+    CYLINDERHEAD1_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 

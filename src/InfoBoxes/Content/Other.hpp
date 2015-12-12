@@ -44,6 +44,9 @@ UpdateInfoBoxCPULoad(InfoBoxData &data);
 void
 UpdateInfoBoxFreeRAM(InfoBoxData &data);
 
+void
+UpdateInfoBoxCHT1(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

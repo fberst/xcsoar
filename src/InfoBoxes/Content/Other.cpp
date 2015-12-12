@@ -30,6 +30,7 @@ Copyright_License {
 #include "Language/Language.hpp"
 #include "UIGlobals.hpp"
 #include "Look/Look.hpp"
+#include "Units/Units.hpp"
 
 #include <tchar.h>
 
@@ -167,4 +168,19 @@ InfoBoxContentHorizon::Update(InfoBoxData &data)
   }
 
   data.SetCustom();
+}
+
+void
+UpdateInfoBoxCHT1(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.cht1_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%2.0f"),
+                    Units::ToUserTemperature(basic.cht1));
+
+  data.SetValueUnit(Units::current.temperature_unit);
 }
