@@ -326,6 +326,20 @@ struct NMEAInfo {
   double humidity;
 
   //###########
+  //   Engine
+  //###########
+
+  /**
+   * Temperature of Cylinderhead1 (if available)
+   */
+  fixed cht1;
+
+  /**
+   * Is temperature information of Cylinderhead1 available?
+   */
+  Validity cht1_available;
+
+  //###########
   //   Other
   //###########
 
@@ -591,6 +605,8 @@ struct NMEAInfo {
     external_wind = value;
     external_wind_available.Update(clock);
   }
+
+  void ProvideCHT1(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
