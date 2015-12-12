@@ -299,3 +299,14 @@ UpdateInfoBoxOilPressure(InfoBoxData &data)
   data.SetValue(_T("%2.1f"), basic.oilpressure);
 }
 
+void
+UpdateInfoBoxFullgauge(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.fullgauge_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  data.SetValue(_T("%2.0f%%"), basic.fullgauge);
+}

@@ -1105,6 +1105,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows the oil pressure"),
     UpdateInfoBoxOilPressure,
   },
+
+  // FULL_GAUGE
+  {
+    N_("Full Gauge"),
+    N_("Full"),
+    N_("Shows the fullgauge in percent"),
+    UpdateInfoBoxFullgauge,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

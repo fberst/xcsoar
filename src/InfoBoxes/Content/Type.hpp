@@ -175,6 +175,8 @@ namespace InfoBoxFactory
 
     OIL_PRESSURE,
 
+    FULL_GAUGE,
+
     e_NUM_TYPES /* Last item */
   };
 
