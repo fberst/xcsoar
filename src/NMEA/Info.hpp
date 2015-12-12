@@ -429,6 +429,16 @@ struct NMEAInfo {
    */
   Validity fullgauge_available;
 
+  /**
+   * Fullflow [l/h] (if available)
+   */
+  fixed fullflow;
+
+  /**
+   * Is information about fullflow available?
+   */
+  Validity fullflow_available;
+
   //###########
   //   Other
   //###########
@@ -715,6 +725,8 @@ struct NMEAInfo {
   void ProvideEngineSpeed(fixed value);
 
   void ProvideFullGauge(fixed value);
+
+  void ProvideFullFlow(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
