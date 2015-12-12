@@ -359,6 +359,16 @@ struct NMEAInfo {
    */
   Validity cht3_available;
 
+  /**
+   * Temperature of Cylinderhead4 (if available)
+   */
+  fixed cht4;
+
+  /**
+   * Is temperature information of Cylinderhead4 available?
+   */
+  Validity cht4_available;
+
   //###########
   //   Other
   //###########
@@ -631,6 +641,8 @@ struct NMEAInfo {
   void ProvideCHT2(fixed value);
 
   void ProvideCHT3(fixed value);
+
+  void ProvideCHT4(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
