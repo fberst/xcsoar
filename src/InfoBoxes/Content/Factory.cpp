@@ -1137,6 +1137,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows Voltage2"),
     UpdateInfoBoxVoltage2,
   },
+
+  // OPERATING_HOURS
+  {
+    N_("Operating hours"),
+    N_("OPH"),
+    N_("Shows the Counter for operting hours"),
+    UpdateInfoBoxOperatinghours,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

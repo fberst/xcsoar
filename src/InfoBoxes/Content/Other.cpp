@@ -346,3 +346,17 @@ UpdateInfoBoxVoltage2(InfoBoxData &data)
 
   data.SetValue(_T("%2.1f"), basic.voltage2);
 }
+
+void
+UpdateInfoBoxOperatinghours(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.operatinghours_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  int hours = basic.operatinghours;
+  int minutes = basic.operatingminutes;
+  data.UnsafeFormatValue(_T("%d:%02d"), hours, minutes);
+}

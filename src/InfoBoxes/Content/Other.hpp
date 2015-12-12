@@ -83,6 +83,9 @@ UpdateInfoBoxVoltage1(InfoBoxData &data);
 void
 UpdateInfoBoxVoltage2(InfoBoxData &data);
 
+void
+UpdateInfoBoxOperatinghours(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

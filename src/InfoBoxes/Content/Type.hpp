@@ -183,6 +183,8 @@ namespace InfoBoxFactory
 
     VOLTAGE2,
 
+    OPERATING_HOURS,
+
     e_NUM_TYPES /* Last item */
   };
 
