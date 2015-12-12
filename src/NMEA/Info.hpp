@@ -439,6 +439,16 @@ struct NMEAInfo {
    */
   Validity fullflow_available;
 
+  /**
+   * External Voltage1 (if available)
+   */
+  fixed voltage1;
+
+  /**
+   * Is external Voltage1 available?
+   */
+  Validity voltage1_available;
+
   //###########
   //   Other
   //###########
@@ -727,6 +737,8 @@ struct NMEAInfo {
   void ProvideFullGauge(fixed value);
 
   void ProvideFullFlow(fixed value);
+
+  void ProvideVoltage1(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.

@@ -214,6 +214,13 @@ NMEAInfo::ProvideFullFlow(fixed value)
   fullflow_available.Update(clock);
 }
 
+void 
+NMEAInfo::ProvideVoltage1(fixed value)
+{
+  voltage1 = value;
+  voltage1_available.Update(clock);
+}
+
 void
 NMEAInfo::Reset()
 {
@@ -294,6 +301,7 @@ NMEAInfo::Reset()
   enginespeed_available.Clear();
   fullgauge_available.Clear();
   fullflow_available.Clear();
+  voltage1_available.Clear();
 }
 
 void
@@ -359,6 +367,7 @@ NMEAInfo::Expire()
   enginespeed_available.Expire(clock,10);
   fullgauge_available.Expire(clock,10);
   fullflow_available.Expire(clock,10);
+  voltage1_available.Expire(clock,10);
 }
 
 void
@@ -495,4 +504,6 @@ NMEAInfo::Complement(const NMEAInfo &add)
     fullgauge = add.fullgauge;
   if (fullflow_available.Complement(add.fullflow_available))
     fullflow = add.fullflow;
+  if (voltage1_available.Complement(add.voltage1_available))
+    voltage1 = add.voltage1;
 }
