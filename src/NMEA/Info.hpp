@@ -399,6 +399,16 @@ struct NMEAInfo {
    */
   Validity water_temp_available;
 
+  /**
+   * Oil-Pressure (if available)
+   */
+  fixed oilpressure;
+
+  /**
+   * Is information about oil pressure available?
+   */
+   Validity oilpressure_available;
+
   //###########
   //   Other
   //###########
@@ -679,6 +689,8 @@ struct NMEAInfo {
   void ProvideExhaustTemperature(fixed value);
 
   void ProvideWaterTemperature(fixed value);
+
+  void ProvideOilPressure(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
