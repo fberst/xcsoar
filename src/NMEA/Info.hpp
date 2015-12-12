@@ -389,6 +389,16 @@ struct NMEAInfo {
    */
   Validity exhaust_temp_available;
 
+  /**
+   * Temperature of Cooling water (if available)
+   */
+  fixed water_temp;
+
+  /**
+   * Is temperature of Cooling Water available?
+   */
+  Validity water_temp_available;
+
   //###########
   //   Other
   //###########
@@ -667,6 +677,8 @@ struct NMEAInfo {
   void ProvideOilTemperature(fixed value);
 
   void ProvideExhaustTemperature(fixed value);
+
+  void ProvideWaterTemperature(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
