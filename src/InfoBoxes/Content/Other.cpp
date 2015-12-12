@@ -214,3 +214,18 @@ UpdateInfoBoxCHT3(InfoBoxData &data)
 
   data.SetValueUnit(Units::current.temperature_unit);
 }
+
+void
+UpdateInfoBoxCHT4(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.cht4_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%2.0f"),
+                    Units::ToUserTemperature(basic.cht4));
+
+  data.SetValueUnit(Units::current.temperature_unit);
+}

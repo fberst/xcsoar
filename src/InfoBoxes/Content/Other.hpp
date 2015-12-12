@@ -53,6 +53,9 @@ UpdateInfoBoxCHT2(InfoBoxData &data);
 void
 UpdateInfoBoxCHT3(InfoBoxData &data);
 
+void
+UpdateInfoBoxCHT4(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

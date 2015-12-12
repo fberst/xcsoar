@@ -163,6 +163,8 @@ namespace InfoBoxFactory
 
     CYLINDERHEAD3_TEMPERATURE,
 
+    CYLINDERHEAD4_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 
