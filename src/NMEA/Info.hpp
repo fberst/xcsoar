@@ -409,6 +409,16 @@ struct NMEAInfo {
    */
    Validity oilpressure_available;
 
+  /**
+   * Enginespeed [rpm](if available)
+   */
+  fixed enginespeed;
+
+  /**
+   * Is information about enginespeed available?
+   */
+  Validity enginespeed_available;
+
   //###########
   //   Other
   //###########
@@ -691,6 +701,8 @@ struct NMEAInfo {
   void ProvideWaterTemperature(fixed value);
 
   void ProvideOilPressure(fixed value);
+
+  void ProvideEngineSpeed(fixed value);
 
   /**
    * Clears all information, start with tabula rasa.
