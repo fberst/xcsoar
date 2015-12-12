@@ -334,3 +334,15 @@ UpdateInfoBoxVoltage1(InfoBoxData &data)
 
   data.SetValue(_T("%2.1f"), basic.voltage1);
 }
+
+void
+UpdateInfoBoxVoltage2(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.voltage2_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  data.SetValue(_T("%2.1f"), basic.voltage2);
+}

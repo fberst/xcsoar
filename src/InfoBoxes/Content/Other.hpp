@@ -80,6 +80,9 @@ UpdateInfoBoxFullflow(InfoBoxData &data);
 void
 UpdateInfoBoxVoltage1(InfoBoxData &data);
 
+void
+UpdateInfoBoxVoltage2(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

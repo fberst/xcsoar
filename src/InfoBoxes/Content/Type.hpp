@@ -181,6 +181,8 @@ namespace InfoBoxFactory
 
     VOLTAGE1,
 
+    VOLTAGE2,
+
     e_NUM_TYPES /* Last item */
   };
 
