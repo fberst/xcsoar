@@ -274,3 +274,15 @@ UpdateInfoBoxWaterTemperature(InfoBoxData &data)
 
   data.SetValueUnit(Units::current.temperature_unit);
 }
+
+void
+UpdateInfoBoxRpm(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.enginespeed_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%2.0f"), basic.enginespeed);
+}

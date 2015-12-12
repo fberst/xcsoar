@@ -171,6 +171,8 @@ namespace InfoBoxFactory
 
     WT_TEMPERATURE,
 
+    ROUNDS_PER_MINUTE,
+
     e_NUM_TYPES /* Last item */
   };
 
