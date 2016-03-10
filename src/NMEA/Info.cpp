@@ -137,6 +137,13 @@ NMEAInfo::ProvideIndicatedAirspeed(double ias)
     ProvideBothAirspeeds(ias, ias);
 }
 
+void 
+NMEAInfo::ProvideRPM(double value)
+{
+  rpm = value;
+  rpm_available.Update(clock);
+}
+
 void
 NMEAInfo::Reset()
 {
@@ -205,6 +212,7 @@ NMEAInfo::Reset()
   device.Clear();
   secondary_device.Clear();
   flarm.Clear();
+  rpm_available.Clear();
 }
 
 void
@@ -259,6 +267,7 @@ NMEAInfo::Expire()
   flarm.Expire(clock);
   gps.Expire(clock);
   attitude.Expire(clock);
+  rpm_available.Expire(clock,10);
 }
 
 void
@@ -372,4 +381,7 @@ NMEAInfo::Complement(const NMEAInfo &add)
     stall_ratio = add.stall_ratio;
 
   flarm.Complement(add.flarm);
+
+  if (rpm_available.Complement(add.rpm_available))
+    rpm = add.rpm;
 }

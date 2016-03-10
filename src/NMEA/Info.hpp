@@ -329,6 +329,17 @@ struct NMEAInfo {
   //   Other
   //###########
 
+  /**
+   * Enginespeed [rpm](if available)
+   */
+  double rpm;
+
+  /**
+   * Is information about enginespeed available?
+   */
+
+  Validity rpm_available;
+
   Validity engine_noise_level_available;
   unsigned engine_noise_level;
 
@@ -583,6 +594,11 @@ struct NMEAInfo {
     netto_vario = value;
     netto_vario_available.Update(clock);
   }
+
+  /**
+   * Sets Enginespeed
+   */
+  void ProvideRPM(double value);
 
   /**
    * Set the external wind value.
