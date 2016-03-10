@@ -340,6 +340,17 @@ struct NMEAInfo {
 
   Validity rpm_available;
 
+  /**
+   * Temperature of Exhaust (if available)
+   */
+  double exhaust_temp;
+
+  /**
+   * Is temperature of Exhaust available?
+   */
+
+  Validity exhaust_temp_available;
+
   Validity engine_noise_level_available;
   unsigned engine_noise_level;
 
@@ -599,6 +610,11 @@ struct NMEAInfo {
    * Sets Enginespeed
    */
   void ProvideRPM(double value);
+
+  /**
+   * Sets ExhaustTemperature
+   */
+  void ProvideExhaustTemperature(double value);
 
   /**
    * Set the external wind value.

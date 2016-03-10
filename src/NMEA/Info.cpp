@@ -145,6 +145,13 @@ NMEAInfo::ProvideRPM(double value)
 }
 
 void
+NMEAInfo::ProvideExhaustTemperature(double value)
+{
+  exhaust_temp = value;
+  exhaust_temp_available.Update(clock);
+}
+
+void
 NMEAInfo::Reset()
 {
   UpdateClock();
@@ -213,6 +220,7 @@ NMEAInfo::Reset()
   secondary_device.Clear();
   flarm.Clear();
   rpm_available.Clear();
+  exhaust_temp_available.Clear();
 }
 
 void
@@ -268,6 +276,7 @@ NMEAInfo::Expire()
   gps.Expire(clock);
   attitude.Expire(clock);
   rpm_available.Expire(clock,10);
+  exhaust_temp_available.Expire(clock,10);
 }
 
 void
@@ -384,4 +393,7 @@ NMEAInfo::Complement(const NMEAInfo &add)
 
   if (rpm_available.Complement(add.rpm_available))
     rpm = add.rpm;
+
+  if (exhaust_temp_available.Complement(add.exhaust_temp_available))
+    exhaust_temp = add.exhaust_temp;
 }
