@@ -152,6 +152,13 @@ NMEAInfo::ProvideExhaustTemperature(double value)
 }
 
 void
+NMEAInfo::ProvideThrottleSetting(double value)
+{
+  throttle = value;
+  throttle_available.Update(clock);
+}
+
+void
 NMEAInfo::Reset()
 {
   UpdateClock();
@@ -221,6 +228,7 @@ NMEAInfo::Reset()
   flarm.Clear();
   rpm_available.Clear();
   exhaust_temp_available.Clear();
+  throttle_available.Clear();
 }
 
 void
@@ -277,6 +285,7 @@ NMEAInfo::Expire()
   attitude.Expire(clock);
   rpm_available.Expire(clock,10);
   exhaust_temp_available.Expire(clock,10);
+  throttle_available.Expire(clock,10);
 }
 
 void
@@ -396,4 +405,7 @@ NMEAInfo::Complement(const NMEAInfo &add)
 
   if (exhaust_temp_available.Complement(add.exhaust_temp_available))
     exhaust_temp = add.exhaust_temp;
+
+  if (throttle_available.Complement(add.throttle_available))
+    throttle = add.throttle;
 }

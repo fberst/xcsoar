@@ -351,6 +351,17 @@ struct NMEAInfo {
 
   Validity exhaust_temp_available;
 
+  /**
+   * Throttle setting (if available, 0-100)
+   */
+  double throttle;
+
+  /**
+   * Is throttle setting available?
+   */
+
+  Validity throttle_available;
+
   Validity engine_noise_level_available;
   unsigned engine_noise_level;
 
@@ -615,6 +626,11 @@ struct NMEAInfo {
    * Sets ExhaustTemperature
    */
   void ProvideExhaustTemperature(double value);
+
+  /**
+   * Sets Throttle
+   */
+  void ProvideThrottleSetting(double value);
 
   /**
    * Set the external wind value.
