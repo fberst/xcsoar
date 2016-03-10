@@ -168,3 +168,15 @@ InfoBoxContentHorizon::Update(InfoBoxData &data)
 
   data.SetCustom();
 }
+
+void
+UpdateInfoBoxRpm(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.rpm_available) {
+    data.SetInvalid();
+    return;
+  }
+ 
+  data.SetValue(_T("%2.0f"), basic.rpm);
+}

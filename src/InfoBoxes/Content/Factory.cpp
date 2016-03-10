@@ -1043,6 +1043,14 @@ static constexpr MetaData meta_data[] = {
     next_waypoint_infobox_panels,
   },
 
+  // ENGINE_SPEED
+  {
+    N_("Engine speed"),
+    N_("RPM"),
+    N_("Engine speed in rounds per minute"),
+    UpdateInfoBoxRpm,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
