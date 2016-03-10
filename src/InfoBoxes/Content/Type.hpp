@@ -162,6 +162,8 @@ namespace InfoBoxFactory
 
     EXHAUST_TEMPERATURE,
 
+    THROTTLE_SETTING,
+
     e_NUM_TYPES /* Last item */
   };
 

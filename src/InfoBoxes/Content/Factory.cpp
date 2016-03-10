@@ -1058,6 +1058,14 @@ static constexpr MetaData meta_data[] = {
     N_("Shows the exhaust temperature"),
     UpdateInfoBoxExhaustTemperature,
   },
+
+  // THROTTLE_SETTING
+  {
+    N_("Throttle Setting"),
+    N_("Throttle"),
+    N_("Shows the throttle setting"),
+    UpdateInfoBoxThrottleSetting,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

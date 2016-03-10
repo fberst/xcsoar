@@ -50,6 +50,9 @@ UpdateInfoBoxRpm(InfoBoxData &data);
 void
 UpdateInfoBoxExhaustTemperature(InfoBoxData &data);
 
+void
+UpdateInfoBoxThrottleSetting(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

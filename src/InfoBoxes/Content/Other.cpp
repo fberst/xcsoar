@@ -196,3 +196,15 @@ UpdateInfoBoxExhaustTemperature(InfoBoxData &data)
  
   data.SetValueUnit(Units::current.temperature_unit);
 }
+
+void
+UpdateInfoBoxThrottleSetting(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.rpm_available) {
+    data.SetInvalid();
+    return;
+  }
+ 
+  data.SetValue(_T("%2.0f"), basic.throttle);
+}
