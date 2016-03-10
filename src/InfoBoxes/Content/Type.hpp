@@ -160,6 +160,8 @@ namespace InfoBoxFactory
 
     ROUNDS_PER_MINUTE,
 
+    EXHAUST_TEMPERATURE,
+
     e_NUM_TYPES /* Last item */
   };
 

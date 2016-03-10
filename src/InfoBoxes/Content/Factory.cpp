@@ -1051,6 +1051,13 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxRpm,
   },
 
+  // EXHAUST_TEMPERATURE
+  {
+    N_("Exhaust temperature"),
+    N_("Exhaust-temp"),
+    N_("Shows the exhaust temperature"),
+    UpdateInfoBoxExhaustTemperature,
+  },
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

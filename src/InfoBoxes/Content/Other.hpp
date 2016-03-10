@@ -47,6 +47,9 @@ UpdateInfoBoxFreeRAM(InfoBoxData &data);
 void
 UpdateInfoBoxRpm(InfoBoxData &data);
 
+void
+UpdateInfoBoxExhaustTemperature(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

@@ -30,6 +30,7 @@ Copyright_License {
 #include "Language/Language.hpp"
 #include "UIGlobals.hpp"
 #include "Look/Look.hpp"
+#include "Units/Units.hpp"
 
 #include <tchar.h>
 
@@ -179,4 +180,19 @@ UpdateInfoBoxRpm(InfoBoxData &data)
   }
  
   data.SetValue(_T("%2.0f"), basic.rpm);
+}
+
+void
+UpdateInfoBoxExhaustTemperature(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.exhaust_temp_available) {
+    data.SetInvalid();
+    return;
+  }
+ 
+  data.SetValue(_T("%2.1f"),
+    Units::ToUserTemperature(basic.exhaust_temp));
+ 
+  data.SetValueUnit(Units::current.temperature_unit);
 }
