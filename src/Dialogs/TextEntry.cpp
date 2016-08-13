@@ -34,12 +34,8 @@ TextEntryDialog(TCHAR *text, size_t width,
   switch (UIGlobals::GetDialogSettings().text_input_style) {
   case DialogSettings::TextInputStyle::Default:
   case DialogSettings::TextInputStyle::Keyboard:
-    if (HasPointer())
-      return TouchTextEntry(text, width, caption, accb, default_shift_state);
-    else {
-      KnobTextEntry(text, width, caption);
-      return true;
-    }
+    KnobTextEntry(text, width, caption);
+    return true;
 
   case DialogSettings::TextInputStyle::HighScore:
     KnobTextEntry(text, width, caption);
