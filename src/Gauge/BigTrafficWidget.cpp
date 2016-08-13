@@ -775,6 +775,10 @@ FlarmTrafficControl::OnKeyDown(unsigned key_code)
 
     ZoomOut();
     return true;
+
+  case KEY_ESCAPE:
+    NextTarget();
+    break;
   }
 
   return FlarmTrafficWindow::OnKeyDown(key_code) ||
