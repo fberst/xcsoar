@@ -73,7 +73,7 @@ public:
    * Initializes the Mutex
    */
 #if defined(HAVE_POSIX) && defined(NDEBUG) && defined(__GLIBC__)
-  constexpr
+  //constexpr
 #endif
   Mutex()
 #ifndef NDEBUG

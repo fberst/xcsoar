@@ -39,7 +39,7 @@ class PosixSharedMutex {
 	pthread_rwlock_t rwlock;
 
 public:
-#ifdef __GLIBC__
+#if 0
 	/* optimized constexpr constructor for pthread implementations
 	   that support it */
 	constexpr PosixSharedMutex():rwlock(PTHREAD_RWLOCK_INITIALIZER) {}

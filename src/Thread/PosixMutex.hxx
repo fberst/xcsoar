@@ -41,7 +41,7 @@ class PosixMutex {
 	pthread_mutex_t mutex;
 
 public:
-#ifdef __GLIBC__
+#if 0
 	/* optimized constexpr constructor for pthread implementations
 	   that support it */
 	constexpr PosixMutex():mutex(PTHREAD_MUTEX_INITIALIZER) {}

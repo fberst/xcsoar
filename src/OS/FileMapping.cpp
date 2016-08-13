@@ -70,7 +70,7 @@ FileMapping::FileMapping(Path path)
   if (m_data == nullptr)
     return;
 
-  madvise(m_data, m_size, MADV_WILLNEED);
+  posix_madvise(m_data, m_size, POSIX_MADV_WILLNEED);
 #else /* !HAVE_POSIX */
   hFile = ::CreateFile(path.c_str(), GENERIC_READ, FILE_SHARE_READ,
                        nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);

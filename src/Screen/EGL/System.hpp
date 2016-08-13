@@ -28,12 +28,10 @@ Copyright_License {
 #include <wayland-egl.h>
 #endif
 
-#ifdef USE_X11
 /* kludges to work around namespace collisions with X11 headers */
 #define Font X11Font
 #define Window X11Window
 #define Display X11Display
-#endif
 
 #ifdef MESA_KMS
 #include <gbm.h>
@@ -41,14 +39,12 @@ Copyright_License {
 
 #include <EGL/egl.h>
 
-#ifdef USE_X11
 #undef Font
 #undef Window
 #undef Display
 
 #ifdef Expose
 #undef Expose
-#endif
 
 #ifdef NoValue
 #undef NoValue
