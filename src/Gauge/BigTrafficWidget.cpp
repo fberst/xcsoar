@@ -773,6 +773,10 @@ FlarmTrafficControl::OnKeyDown(unsigned key_code)
     if (!HasPointer())
       break;
 
+  case KEY_ESCAPE:
+    NextTarget();
+    break;
+
     ZoomOut();
     return true;
   }
