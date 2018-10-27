@@ -162,7 +162,7 @@ AirspaceWarningMonitor::Check()
     return;
   }
 
-  if (!HasPointer()) {
+  if (1) {
     /* "classic" list-only view for devices without touch screen */
 
     if (dlgAirspaceWarningVisible())
