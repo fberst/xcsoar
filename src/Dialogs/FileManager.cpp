@@ -111,6 +111,7 @@ class ManagedFileListWidget
   enum Buttons {
     DOWNLOAD,
     ADD,
+    REMOVE,
     CANCEL,
   };
 
@@ -159,7 +160,7 @@ class ManagedFileListWidget
   TwoTextRowsRenderer row_renderer;
 
 #ifdef HAVE_DOWNLOAD_MANAGER
-  Button *download_button, *add_button, *cancel_button;
+  Button *download_button, *add_button, *remove_button, *cancel_button;
 #endif
 
   FileRepository repository;
@@ -260,6 +261,7 @@ protected:
 
   void Download();
   void Add();
+  void Remove();
   void Cancel();
 
 public:
@@ -399,6 +401,7 @@ ManagedFileListWidget::CreateButtons(WidgetDialog &dialog)
   if (Net::DownloadManager::IsAvailable()) {
     download_button = dialog.AddButton(_("Download"), *this, DOWNLOAD);
     add_button = dialog.AddButton(_("Add"), *this, ADD);
+    remove_button = dialog.AddButton(_("Remove"), *this, REMOVE);
     cancel_button = dialog.AddButton(_("Cancel"), *this, CANCEL);
   }
 #endif
@@ -562,6 +565,20 @@ ManagedFileListWidget::Add()
 }
 
 void
+ManagedFileListWidget::Remove()
+{
+  if (items.empty())
+    return;
+
+  const unsigned current = GetList().GetCursorIndex();
+  assert(current < items.size());
+
+  const FileItem &item = items[current];
+  File::Delete(LocalPath(_T(item.name)));
+  RefreshList();
+}
+
+void
 ManagedFileListWidget::Cancel()
 {
 #ifdef HAVE_DOWNLOAD_MANAGER
@@ -588,6 +605,10 @@ ManagedFileListWidget::OnAction(int id)
 
   case ADD:
     Add();
+    break;
+ 
+  case REMOVE:
+    Remove();
     break;
 
   case CANCEL:
