@@ -29,11 +29,11 @@ Copyright_License {
 #include <assert.h>
 #include <string.h>
 
-#if defined(HAVE_POSIX) && !defined(ANDROID) && !defined(KOBO) && !defined(__APPLE__)
+//#if defined(HAVE_POSIX) && !defined(ANDROID) && !defined(KOBO) && !defined(__APPLE__)
 
-#include <locale.h>
+//#include <locale.h>
 
-#else
+//#else
 
 #ifdef _UNICODE
 #include <windows.h>
@@ -148,4 +148,4 @@ reset_gettext_cache()
 #endif
 }
 
-#endif /* !HAVE_POSIX */
+//#endif /* !HAVE_POSIX */

@@ -24,23 +24,23 @@ Copyright_License {
 #ifndef XCSOAR_LANGUAGE_HPP
 #define XCSOAR_LANGUAGE_HPP
 
-#if defined(HAVE_POSIX) && !defined(ANDROID) && !defined(KOBO) && !defined(__APPLE__)
-#define USE_LIBINTL
+//#if defined(HAVE_POSIX) && !defined(ANDROID) && !defined(KOBO) && !defined(__APPLE__)
+//#define USE_LIBINTL
 
-#include <libintl.h> // IWYU pragma: export
+//#include <libintl.h> // IWYU pragma: export
 
-#define _(x) gettext(x)
+//#define _(x) gettext(x)
 
-#ifdef gettext_noop
-#define N_(x) gettext_noop(x)
-#else
-#define N_(x) (x)
-#endif
+//#ifdef gettext_noop
+//#define N_(x) gettext_noop(x)
+//#else
+//#define N_(x) (x)
+//#endif
 
-static inline void AllowLanguage() {}
-static inline void DisallowLanguage() {}
+//static inline void AllowLanguage() {}
+//static inline void DisallowLanguage() {}
 
-#else // !HAVE_POSIX
+//#else // !HAVE_POSIX
 
 #include "Compiler.h"
 
@@ -68,6 +68,6 @@ const TCHAR* gettext(const TCHAR* text);
 
 void reset_gettext_cache();
 
-#endif // !HAVE_POSIX
+//#endif // !HAVE_POSIX
 
 #endif
