@@ -201,3 +201,15 @@ UpdateInfoBoxNbrSat(InfoBoxData &data)
         data.SetValueInvalid();
     }
 }
+
+void
+UpdateInfoBoxSideslip(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.angle_of_sideslip_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+ data.SetValue(basic.angle_of_sideslip);
+}

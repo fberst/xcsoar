@@ -1067,6 +1067,13 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxNbrSat,
   },
 
+  {
+    N_("Angle of Side-Slip"),
+    N_("AOSS"),
+    N_("Angle of Side-Slip measured by finnegan"),
+    UpdateInfoBoxSideslip,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
