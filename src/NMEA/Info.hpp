@@ -326,6 +326,34 @@ struct NMEAInfo {
    */
   double humidity;
 
+   //###########
+   //   AoA sensors
+   //###########
+
+  /**
+   * Angle of attack of aircraft (positive indicates relative wind from below, if available)
+   * @see angle_of_attack_available
+   */
+  Angle angle_of_attack;
+
+  /**
+   * Is angle of attack information available?
+   * @see angle_of_attack
+   */
+  Validity angle_of_attack_available;
+
+  /**
+   * Angle of sideslip of aircraft (positive indicates relative wind from right, if available)
+   * @see angle_of_sideslip_available
+   */
+  Angle angle_of_sideslip;
+
+  /**
+   * Is angle of sideslip information available?
+   * @see angle_of_sideslip
+   */
+  Validity angle_of_sideslip_available;
+
   //###########
   //   Other
   //###########

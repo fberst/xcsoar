@@ -191,6 +191,9 @@ NMEAInfo::Reset()
   temperature_available = false;
   humidity_available = false;
 
+  angle_of_attack_available.Clear();
+  angle_of_sideslip_available.Clear();
+
   engine_noise_level_available.Clear();
 
   voltage_available.Clear();
@@ -359,6 +362,13 @@ NMEAInfo::Complement(const NMEAInfo &add)
     humidity = add.humidity;
     humidity_available = add.humidity_available;
   }
+
+  if (angle_of_attack_available.Complement(add.angle_of_attack_available))
+    angle_of_attack = add.angle_of_attack;
+
+  if (angle_of_sideslip_available.Complement(add.angle_of_sideslip_available))
+    angle_of_sideslip = add.angle_of_sideslip;
+
 
   if (voltage_available.Complement(add.voltage_available))
     voltage = add.voltage;
