@@ -371,6 +371,14 @@ struct NMEAInfo {
   /** Battery supply information in percent (0.0 - 100.0; if available) */
   double battery_level;
 
+  /** External battery info*/
+  double external_voltage;
+
+  Validity external_battery_level_available;
+
+  /** external Battery supply information in percent (0.0 - 100.0; if available) */
+  double external_battery_level;
+
   /** Switch state of the user inputs */
   SwitchState switch_state;
 
@@ -620,6 +628,11 @@ struct NMEAInfo {
     external_wind = value;
     external_wind_available.Update(clock);
   }
+
+  /**
+   * Set the external battery status.
+   */
+  void ProvideExternalBatteryStatus(double voltage, double battery_percentage);
 
   /**
    * Clears all information, start with tabula rasa.

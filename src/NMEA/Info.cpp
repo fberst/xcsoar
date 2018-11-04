@@ -137,6 +137,14 @@ NMEAInfo::ProvideIndicatedAirspeed(double ias)
     ProvideBothAirspeeds(ias, ias);
 }
 
+void 
+NMEAInfo::ProvideExternalBatteryStatus(double voltage, double battery_percentage)
+{
+   external_voltage = voltage;
+   external_battery_level = battery_percentage;
+   external_battery_level_available.Update(clock);
+}
+
 void
 NMEAInfo::Reset()
 {
@@ -198,6 +206,7 @@ NMEAInfo::Reset()
 
   voltage_available.Clear();
   battery_level_available.Clear();
+  external_battery_level_available.Clear();
 
   switch_state.Reset();
 
@@ -259,6 +268,7 @@ NMEAInfo::Expire()
   engine_noise_level_available.Expire(clock, 30);
   voltage_available.Expire(clock, 300);
   battery_level_available.Expire(clock, 300);
+  external_battery_level_available.Expire(clock, 10);
   flarm.Expire(clock);
   gps.Expire(clock);
   attitude.Expire(clock);
@@ -363,7 +373,7 @@ NMEAInfo::Complement(const NMEAInfo &add)
     humidity_available = add.humidity_available;
   }
 
-  if (angle_of_attack_available.Complement(add.angle_of_attack_available))
+   if (angle_of_attack_available.Complement(add.angle_of_attack_available))
     angle_of_attack = add.angle_of_attack;
 
   if (angle_of_sideslip_available.Complement(add.angle_of_sideslip_available))
@@ -375,6 +385,9 @@ NMEAInfo::Complement(const NMEAInfo &add)
 
   if (battery_level_available.Complement(add.battery_level_available))
     battery_level = add.battery_level;
+
+  if (external_battery_level_available.Complement(add.external_battery_level_available))
+    external_battery_level = add.external_battery_level;
 
   switch_state.Complement(add.switch_state);
 
