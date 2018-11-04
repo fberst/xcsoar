@@ -50,6 +50,9 @@ UpdateInfoBoxNbrSat(InfoBoxData &data);
 void
 UpdateInfoBoxSideslip(InfoBoxData &data);
 
+void
+UpdateInfoBoxAngleOfAttack(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

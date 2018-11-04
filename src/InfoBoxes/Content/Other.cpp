@@ -213,3 +213,15 @@ UpdateInfoBoxSideslip(InfoBoxData &data)
 
  data.SetValue(basic.angle_of_sideslip);
 }
+
+void
+UpdateInfoBoxAngleOfAttack(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.angle_of_attack_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+ data.SetValue(basic.angle_of_attack);
+}

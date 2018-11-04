@@ -1074,6 +1074,13 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxSideslip,
   },
 
+  {
+    N_("Angle of Attack"),
+    N_("AOA"),
+    N_("Angle of Attack measured by finnegan"),
+    UpdateInfoBoxAngleOfAttack,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
