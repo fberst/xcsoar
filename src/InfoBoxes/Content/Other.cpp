@@ -225,3 +225,15 @@ UpdateInfoBoxAngleOfAttack(InfoBoxData &data)
 
  data.SetValue(basic.angle_of_attack);
 }
+
+void
+UpdateInfoBoxExternalSOC(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.external_battery_level_available) {
+    data.SetInvalid();
+    return;
+  } 
+
+  data.SetValueFromPercent(basic.external_battery_level);
+}

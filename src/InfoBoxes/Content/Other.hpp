@@ -53,6 +53,9 @@ UpdateInfoBoxSideslip(InfoBoxData &data);
 void
 UpdateInfoBoxAngleOfAttack(InfoBoxData &data);
 
+void
+UpdateInfoBoxExternalSOC(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

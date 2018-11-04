@@ -1081,6 +1081,13 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxAngleOfAttack,
   },
 
+  {
+    N_("Ext Battery"),
+    N_("Ext Battery"),
+    N_("External battery SOC"),
+    UpdateInfoBoxExternalSOC,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,

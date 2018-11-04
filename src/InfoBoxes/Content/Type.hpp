@@ -168,6 +168,8 @@ namespace InfoBoxFactory
 
     e_sidelip_angle_of_attack,
 
+    e_external_soc,
+
     e_NUM_TYPES /* Last item */
   };
 
