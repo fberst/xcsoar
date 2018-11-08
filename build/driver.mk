@@ -125,6 +125,7 @@ DRIVER_SOURCES = \
 	$(DRIVER_SRC_DIR)/Vaulter.cpp \
 	$(DRIVER_SRC_DIR)/KRT2.cpp \
 	$(DRIVER_SRC_DIR)/ATR833.cpp \
-        $(DRIVER_SRC_DIR)/Biofeetback.cpp
+        $(DRIVER_SRC_DIR)/Biofeetback.cpp \
+        $(DRIVER_SRC_DIR)/SmartRemote.cpp
 
 $(eval $(call link-library,driver,DRIVER))
