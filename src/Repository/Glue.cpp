@@ -27,7 +27,8 @@ Copyright_License {
 
 #include <tchar.h>
 
-#define REPOSITORY_URI "http://download.xcsoar.org/repository"
+//#define REPOSITORY_URI "http://download.xcsoar.org/repository"
+#define REPOSITORY_URI "http://s624368771.online.de/repository/repository"
 
 static bool repository_downloaded = false;
 
