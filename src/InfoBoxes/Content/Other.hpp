@@ -56,6 +56,12 @@ UpdateInfoBoxAngleOfAttack(InfoBoxData &data);
 void
 UpdateInfoBoxExternalSOC(InfoBoxData &data);
 
+void
+UpdateInfoBoxPulse(InfoBoxData &data);
+
+void
+UpdateInfoBoxSPO2(InfoBoxData &data);
+
 class InfoBoxContentHorizon : public InfoBoxContent
 {
 public:

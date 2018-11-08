@@ -170,6 +170,10 @@ namespace InfoBoxFactory
 
     e_external_soc,
 
+    e_Pulse,
+
+    e_SPO2,
+
     e_NUM_TYPES /* Last item */
   };
 

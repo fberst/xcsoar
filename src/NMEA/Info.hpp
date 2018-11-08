@@ -379,6 +379,15 @@ struct NMEAInfo {
   /** external Battery supply information in percent (0.0 - 100.0; if available) */
   double external_battery_level;
 
+  /** SPO2Saturation measured by Pulse-Oxymeter in RBE Smart-Remote */
+  int SPO2Saturation;
+  Validity SPO2Saturation_available;
+
+  /** Pulse measured by Pulse-Oxymeter in RBE Smart-Remote */
+  int pulse;
+  Validity pulse_available;
+
+
   /** Switch state of the user inputs */
   SwitchState switch_state;
 
@@ -633,6 +642,10 @@ struct NMEAInfo {
    * Set the external battery status.
    */
   void ProvideExternalBatteryStatus(double voltage, double battery_percentage);
+
+  void ProvideSPO2Saturation(int value);
+
+  void ProvidePulse(int value);
 
   /**
    * Clears all information, start with tabula rasa.

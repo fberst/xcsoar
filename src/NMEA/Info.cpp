@@ -146,6 +146,21 @@ NMEAInfo::ProvideExternalBatteryStatus(double voltage, double battery_percentage
 }
 
 void
+NMEAInfo::ProvideSPO2Saturation(int value)
+{
+  SPO2Saturation = value;
+  SPO2Saturation_available.Update(clock);
+}
+
+void
+NMEAInfo::ProvidePulse(int value)
+{
+  pulse = value;
+  pulse_available.Update(clock);
+}
+
+
+void
 NMEAInfo::Reset()
 {
   UpdateClock();
@@ -207,6 +222,9 @@ NMEAInfo::Reset()
   voltage_available.Clear();
   battery_level_available.Clear();
   external_battery_level_available.Clear();
+  SPO2Saturation_available.Clear();
+  pulse_available.Clear();
+
 
   switch_state.Reset();
 
@@ -269,6 +287,8 @@ NMEAInfo::Expire()
   voltage_available.Expire(clock, 300);
   battery_level_available.Expire(clock, 300);
   external_battery_level_available.Expire(clock, 10);
+  SPO2Saturation_available.Expire(clock, 10);
+  pulse_available.Expire(clock, 10);
   flarm.Expire(clock);
   gps.Expire(clock);
   attitude.Expire(clock);
@@ -388,6 +408,12 @@ NMEAInfo::Complement(const NMEAInfo &add)
 
   if (external_battery_level_available.Complement(add.external_battery_level_available))
     external_battery_level = add.external_battery_level;
+
+  if(SPO2Saturation_available.Complement(add.SPO2Saturation_available))
+    SPO2Saturation = add.SPO2Saturation;
+
+  if(pulse_available.Complement(add.pulse_available))
+    pulse = add.pulse;
 
   switch_state.Complement(add.switch_state);
 

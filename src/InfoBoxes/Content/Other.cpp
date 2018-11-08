@@ -237,3 +237,29 @@ UpdateInfoBoxExternalSOC(InfoBoxData &data)
 
   data.SetValueFromPercent(basic.external_battery_level);
 }
+
+void
+UpdateInfoBoxPulse(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.pulse_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%d"),basic.pulse);
+}
+
+void
+UpdateInfoBoxSPO2(InfoBoxData &data)
+{
+  const NMEAInfo &basic = CommonInterface::Basic();
+  if (!basic.SPO2Saturation_available) {
+    data.SetInvalid();
+    return;
+  }
+
+  data.SetValue(_T("%d%"),basic.SPO2Saturation);
+}
+
+

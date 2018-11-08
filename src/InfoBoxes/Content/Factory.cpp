@@ -1088,6 +1088,22 @@ static constexpr MetaData meta_data[] = {
     UpdateInfoBoxExternalSOC,
   },
 
+  // Pulse
+  {
+    N_("Pulse"),
+    N_("Pulse"),
+    N_("Pulse measured by connected Pulse-Oxymeter"),
+    UpdateInfoBoxPulse,
+  },
+
+  // SPO2 Saturation
+  {
+    N_("SPO2 Saturation"),
+    N_("SPO2"),
+    N_("SPO2 measured by connected Pulse-Oxymeter"),
+    UpdateInfoBoxSPO2,
+  },
+
 };
 
 static_assert(ARRAY_SIZE(meta_data) == NUM_TYPES,
